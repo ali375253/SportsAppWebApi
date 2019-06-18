@@ -1,0 +1,30 @@
+<h1 align="center" font-size="40px"><a [routerLink]='["/view-cooper-test"]'>Sports App</a></h1>
+<ul class='nav navbar-nav'>
+  <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+    <a [routerLink]='["/view-cooper-test"]'>Cooper Tests</a>
+  </li>
+  <li [routerLinkActive]='["link-active"]'>
+    <a [routerLink]='["/view-cooper-test-details"]'>Cooper Test Details</a>
+  </li>
+  <li [routerLinkActive]='["link-active"]'>
+    <a [routerLink]='["/view-user"]'>Users</a>
+  </li>
+</ul>
+<table class='table table-striped'>
+  <tr>
+    <th>Id</th>
+    <th>User Id</th>
+    <th>Result</th>
+    <th>Cooper Test Id</th>
+    <th colspan="2">Actions</th>
+  </tr>
+  <tr *ngFor="let content of service.list">
+    <td (click)="editForm(content)">{{content.Id}}</td>
+    <td (click)="editForm(content)">{{content.UsersId}}</td>
+    <td (click)="editForm(content)">{{content.Result}}</td>
+    <td (click)="editForm(content)">{{content.CooperTestId}}</td>
+    <td><button class="btn btn-primary" (click)="editForm(content)">Edit</button></td>
+    <td><button class="btn btn-danger" (click)="onDelete(content.Id)">Delete</button></td>
+  </tr>
+</table>
+<a [routerLink]="['/add-cooper-test-details']" class="btn btn-success">Add Athelete Result</a>

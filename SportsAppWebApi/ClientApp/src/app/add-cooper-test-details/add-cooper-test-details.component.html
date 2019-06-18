@@ -1,0 +1,18 @@
+<h3 align="center">Create Cooper Test</h3>
+
+<form #details="ngForm" autocomplete="off" (submit)="onSubmit(details)">
+  <div class="form-group">
+    <input type="hidden" name="Id" [value]="service2.data.Id" />
+    <p>User Id</p>
+    <input name="UsersId" #UsersId="ngModel" [(ngModel)]="service2.data.UsersId" class="form-control" />
+    <p>Result</p>
+    <input name="Result" #Result="ngModel" [(ngModel)]="service2.data.Result" class="form-control" />
+    <p>Cooper Test Id</p>
+    <input name="CooperTestId" #CooperTestId="ngModel" [(ngModel)]="service2.data.CooperTestId" class="form-control" />
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="details.invalid">Save</button>
+    <a class="btn btn-info" [routerLink]="['/view-cooper-test-details']">Back</a>
+  </div>
+</form>
+
